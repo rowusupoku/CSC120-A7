@@ -6,6 +6,7 @@ public class Building {
     protected String address;
     protected int nFloors;
     protected int activeFloor = -1; // Default value indicating we are not inside this building
+    // a protected instance method in the super-class can be made public, but not private, in the subclass. 
 
     /* Default constructor */
     public Building() {
@@ -67,7 +68,7 @@ public class Building {
         this.activeFloor = -1; // We're leaving the building, so we no longer have a valid active floor
         return null; // We're outside now, so the building is null
     }
-
+ 
     public void goToFloor(int floorNum) {
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");
